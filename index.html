@@ -1,5 +1,39 @@
 <script>
-    var woord = "kerstmis";
-    console.log( woord.charAt(3) );
+
+    var veld = [[0,0,0],[0,1,0],[0,0,0]]
+    function tekenveld(){
+        let hetveld = document.getElementById("veld");
+        hetveld.innerHTML = "";
+        for(let x = 0; x < veld.length; x++){
+            for(let y = 0; y < veld[x].length; y++){
+                
+                if(veld[x][y] == 1){
+                    hetveld.innerHTML += `<div class="hokje rood"></div>`
+                }else{
+                    hetveld.innerHTML += `<div class="hokje groen"></div>`
+                }
+            }
+            hetveld.innerHTML += `<br>`;
+        }
+    }
+ 
 </script>
+<style>
+    div.hokje{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 2px solid black;
+    }
+    .rood{
+        background-color:  red;
+    }
+    .groen{
+        background-color:  green;
+
+    }
+</style>
+<button onclick="tekenveld()">go</button>
+<div id="veld"></div>
+
  
